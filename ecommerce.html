@@ -133,8 +133,11 @@
         color: #fff; /* White text */
         padding: 16px 0;
         font-size: 20px;
+        
+        background-color: #000;
       }
-
+      
+      
       /* Section title styling */
       .section-title {
         text-align: center;
@@ -231,6 +234,11 @@
         width: 20px;
         margin: 0px 10px;
       }
+
+      a{text-decoration: none;}
+
+      button{transition: transform 0.3s ease, background 0.3s ease;}
+      button:hover{transform: scale(1.05);}
     </style>
   </head>
   <body>
@@ -256,7 +264,7 @@
           placeholder="🔍Search for products..."
         />
         <!-- Search Input -->
-        <div>🛒</div>
+        <div id="Shopping_cart"><a href="Cart\cart.html">🛒</a></div>
         <!-- Shopping Cart Icon -->
         <div>
           <img
@@ -299,7 +307,8 @@
       <div>ZARA</div>
       <div>GUCCI</div>
       <div>PRADA</div>
-      <div>Calvin Klein</div>
+    <div>Calvin Klein</div>
+    
     </div>
 
     <!-- New Arrivals Section -->
