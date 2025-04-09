@@ -47,8 +47,8 @@ header {
     cursor: pointer;
 }
 
-#mantra{
-    margin: 20px;
+#bottomtext{
+    margin-left: 40px;
     color: #9c9b9b;}
 
 .subtext{
@@ -113,7 +113,7 @@ header {
     
 }
 
-#Title{text-align: left;
+#Title{text-align: center;
 
 
 }
