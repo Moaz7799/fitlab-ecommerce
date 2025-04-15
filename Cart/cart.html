@@ -9,7 +9,7 @@
     
 </head>
 <body>
-    <header><a href="../ecommerce.html" class="Logo"><img src="light-250px.png" alt="Fitlab"></a>
+    <header><a href="../ecommerce.html" class="Logo"><img src="white logo.svg" width="250" alt="Fitlab"></a>
         <a href="">Shop</a>
         <a href="">On Sale</a>
         <a href="">New Arrivals</a>
@@ -29,32 +29,36 @@
                 
                 
                 <div class="cart-item">
+                    <hr>
+                    <div class="product_and_delete">
+                        <p class="Product">Product Name</p>
+                        <button class="Delete_Product_button"><i class="fa-solid fa-trash-can" style="color: rgb(203, 24, 24);"></i></button>
+                    </div>
                     
-                    <p class="Product">Product Name</p>
                     <p class="subtext">Size: L</p>
                     <p class="subtext">Color: white</p>
-                    <div class="PricenQuantity">
-                        <p class="Product"> $10.00</p>
-                        <input type="number" id="Quantity"min="1">
-                    </div>
-                    <hr>
-                    <p class="Product">Product Name</p>
-                    <p class="subtext">Size: XL</p>
-                    <p class="subtext">Color: blue</p>
-                    <div class="PricenQuantity">
-                        <p class="Product"> $19.99</p>
-                        <input type="number" id="Quantity" min="1">
-                    </div>
+                <div class="Price_and_Quantity">
+                        <div>
+                            <span class="product_price">0.00$</span>
+                        </div>
+                            <div class="Quantity">
+                                <button class="Minus_button">-</button>
+                                <span class="quantity_num">1</span>
+                                <button class="Plus_button">+</button>
+                        </div>
+                </div>
+                    
+                    <!-- end of items-->
                 </div>
             </div>
             <div class="order-summary" id="box">
                 <h1>Order Summary</h1>
-                <p class="subtext">Subtotal</p>
-                <p class="subtext">Discount</p>
-                <p class="subtext">Delivery fee</p>
-                <p class="subtext">Service fee</p>
+                <p class="subtext">Subtotal: <span id="Subtotal_order">0.00$</span></p>
+                <p class="subtext">Discount: <span id="discount_order" style="color: rgb(198, 35, 35);">0.00$</span></p>
+                <p class="subtext">Delivery fee: <span id="Delivery_fee_order">0.00$</span></p>
+                <p class="subtext">Service fee: <span id="Service_fee_order">0.00$</span></p>
                 <hr>
-                <h3>Total:</h3>
+                <h3>Total: <span id="Total_order">0.00$</span></h3>
                 
                <div class="bottom"> 
                 <div class="Discount">
@@ -77,7 +81,7 @@
 
     <footer>
         <hr>
-        <h1><a href="" id="logo_footer"><img src="light-250px.png" alt=""></a></h1>
+        <h1><a href="" id="logo_footer"><img src="white logo.svg" width="240" alt=""></a></h1>
         <p class="subtext" id="bottomtext">we have clothes that fit your style and <br>
             which you're proud to wear. <br> from
             women to men

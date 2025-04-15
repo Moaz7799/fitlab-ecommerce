@@ -19,6 +19,11 @@ header {
    padding: 10px;
 }
 
+span{
+    margin: none;
+    padding: none;
+
+}
 
 
 .checkout-section {
@@ -55,6 +60,14 @@ header {
     color: #9c9b9b;
 }
 
+img{
+    padding: none;
+    margin: none;
+    border: none;
+
+}
+
+
 
 #discountbar{
     border: none;
@@ -88,6 +101,56 @@ header {
 
 }
 #Apply:hover{transform: scale(1.05);}
+
+.Minus_button{
+    border: none;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #000000;
+    background-color: #ccc;
+    border-radius: 20px;
+    cursor: pointer;
+   
+}
+.Minus_button:hover{background-color: #d4d4d4;}
+.Minus_button:active{background-color: #dad9d9;}
+
+
+.Quantity{
+    border-style: solid;
+    border-radius: 20px;
+    border-width: 1.5px;
+    background-color: #ccc;
+}
+
+
+.Plus_button{
+
+    border: none;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 20px;
+    color: #000000;
+    cursor: pointer;
+    background-color: #ccc;
+}
+
+.Plus_button:hover{background-color: #d4d4d4;}
+.Plus_button:active{background-color: #dad9d9;}
+
+.Delete_Product_button{
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.product_and_delete{
+    display: flex ;
+    justify-content: space-between;
+}
+
 #sub{
     border: none;
     border-radius: 30px;
@@ -125,8 +188,13 @@ header {
     border-width: 3px;
     background-color:#ccc ;
     border-color:#9c9b9b;
-    color: #626262;
+    color: #9c9b9b;
     
 
 }
 
+.Price_and_Quantity{
+    display: flex;
+    justify-content: space-between;
+
+}
