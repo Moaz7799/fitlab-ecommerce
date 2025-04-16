@@ -82,8 +82,8 @@ img{
     
 }
 
-#icon{
-    color: #000000;
+.icon{
+    color: #9f9f9f;
     
 }
 
@@ -125,6 +125,27 @@ img{
 }
 
 
+.discount_code_with_icon{
+    
+    border: none;
+    text-decoration: none;
+    outline: none;
+    background-color: #ccc;
+    border-radius: 30px;
+    padding-top: 5px ;
+    padding-bottom: 5px ;
+    padding-left: 5px;
+    
+    
+}
+
+
+
+.Discount{
+    display: flex;
+    justify-content: space-between;
+}
+
 .Plus_button{
 
     border: none;
@@ -154,10 +175,10 @@ img{
 #sub{
     border: none;
     border-radius: 30px;
-    padding-left: 75px;
-    padding-right: 75px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-left: 110px;
+    padding-right: 110px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     background-color: #000000;
     color: #ffffff;
     cursor: pointer;
@@ -172,7 +193,7 @@ img{
 .Submit_order {
     margin-top: 30px ;
     display: flex;
-    justify-content: left;
+    justify-content: center;
     
 }
 
@@ -198,3 +219,4 @@ img{
     justify-content: space-between;
 
 }
+
