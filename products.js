@@ -1,0 +1,26 @@
+const products = [
+  {
+    id: 1,
+    name: "Black Hoodie",
+    originalPrice: 699,
+    currentPrice: 599,
+    image: "./assets/images/black-hoodie.jpg",
+    category: "Hoodies",
+    size: ["S", "M", "L", "XL"],
+    description: "Comfy cotton hoodie with a modern fit.",
+    inStock: true,
+    rating: 4.5,
+  },
+  {
+    id: 2,
+    name: "White T-Shirt",
+    originalPrice: 349,
+    currentPrice: 299,
+    image: "./assets/images/white-tshirt.jpg",
+    category: "T-Shirts",
+    size: ["M", "L"],
+    description: "Minimalist white tee for everyday wear.",
+    inStock: true,
+    rating: 4.0,
+  },
+];

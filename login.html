@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitlab | Login</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Top Banner -->
+    <div class="top-banner">
+      <div class="container">
+        <p>
+          Sign up and get 20% off your first order.
+          <a href="#signup" id="topBannerSignupLink">Sign Up Now</a>
+        </p>
+        <button class="close-banner" aria-label="Close Banner">×</button>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html" class="logo-link">
+            <img src="assets/images/fitlab-logo-light.svg" alt="brand logo" />
+          </a>
+        </div>
+
+        <button
+          class="mobile-menu-toggle"
+          aria-expanded="false"
+          aria-label="Toggle navigation menu"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="nav-links">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#">Brands</a></li>
+          </ul>
+        </div>
+
+        <!-- Include if you want search in login page -->
+        <div class="search-bar">
+          <div class="search-container">
+            <span class="search-icon"><i class="fas fa-search"></i></span>
+            <input
+              type="text"
+              class="search-input"
+              placeholder="Search for products..."
+            />
+          </div>
+        </div>
+
+        <div class="nav-icons">
+          <button class="icon-button" aria-label="Cart button">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </button>
+          <button class="icon-button" aria-label="User button">
+            <i class="fa-solid fa-circle-user"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Login/Signup Section -->
+    <section class="auth-section">
+      <div class="container">
+        <div class="auth-container">
+          <!-- Login Form -->
+          <div class="auth-form login-form active">
+            <h2>Welcome Back</h2>
+            <p>Please enter your details to sign in</p>
+
+            <form id="loginForm">
+              <div class="form-group">
+                <label for="loginEmail">Email</label>
+                <div class="input-group">
+                  <i class="fa-regular fa-envelope"></i>
+                  <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="Enter your email"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="loginPassword">Password</label>
+                <div class="input-group">
+                  <i class="fa-solid fa-lock"></i>
+                  <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Enter your password"
+                    required
+                  />
+                  <button
+                    type="button"
+                    class="toggle-password"
+                    aria-label="Toggle password visibility"
+                  >
+                    <i class="fa-regular fa-eye"></i>
+                  </button>
+                </div>
+              </div>
+
+              <button type="submit" class="auth-btn">Sign In</button>
+
+              <div class="auth-divider">
+                <span>or</span>
+              </div>
+
+              <button type="button" class="social-auth google-auth">
+                <img src="assets/images/google-icon.svg" alt="Google logo" />
+                Sign in with Google
+              </button>
+
+              <p class="auth-switch">
+                Don't have an account? <a href="#" id="showSignup">Sign up</a>
+              </p>
+            </form>
+          </div>
+
+          <!-- Signup Form -->
+          <div class="auth-form signup-form">
+            <h2>Create Account</h2>
+            <p>Enter your details to get started</p>
+
+            <form id="signupForm">
+              <div class="form-group">
+                <label for="signupName">Full Name</label>
+                <div class="input-group">
+                  <i class="fa-regular fa-user"></i>
+                  <input
+                    type="text"
+                    id="signupName"
+                    placeholder="Enter your full name"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="signupEmail">Email</label>
+                <div class="input-group">
+                  <i class="fa-regular fa-envelope"></i>
+                  <input
+                    type="email"
+                    id="signupEmail"
+                    placeholder="Enter your email"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="signupPassword">Password</label>
+                <div class="input-group">
+                  <i class="fa-solid fa-lock"></i>
+                  <input
+                    type="password"
+                    id="signupPassword"
+                    placeholder="Create a password"
+                    required
+                  />
+                  <button
+                    type="button"
+                    class="toggle-password"
+                    aria-label="Toggle password visibility"
+                  >
+                    <i class="fa-regular fa-eye"></i>
+                  </button>
+                </div>
+                <div class="password-strength">
+                  <span class="strength-bar"></span>
+                  <span class="strength-bar"></span>
+                  <span class="strength-bar"></span>
+                  <span class="strength-text">Password strength</span>
+                </div>
+              </div>
+
+              <div class="form-group terms-group">
+                <input type="checkbox" id="agreeTerms" required />
+                <label for="agreeTerms"
+                  >I agree to the <a href="#">Terms of Service</a> and
+                  <a href="#">Privacy Policy</a></label
+                >
+              </div>
+
+              <button type="submit" class="auth-btn">Create Account</button>
+
+              <div class="auth-divider">
+                <span>or</span>
+              </div>
+
+              <button type="button" class="social-auth google-auth">
+                <img src="assets/images/google-icon.svg" alt="Google logo" />
+                Sign up with Google
+              </button>
+
+              <p class="auth-switch">
+                Already have an account? <a href="#" id="showLogin">Sign in</a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <!-- Brand Column -->
+          <div class="footer-column brand-column">
+            <div class="footer-logo">
+              <img src="assets/images/fitlab-logo-light.svg" alt="brand logo" />
+            </div>
+            <p class="brand-description">
+              We have clothes that suits your style and which you're proud to
+              wear. From sleek to street, we've got you covered.
+            </p>
+
+            <div class="social-icons">
+              <a href="#" class="social-icon"
+                ><i class="fa-brands fa-twitter"></i
+              ></a>
+              <a href="#" class="social-icon"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+              <a href="#" class="social-icon"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Company Column -->
+          <div class="footer-column">
+            <h4>COMPANY</h4>
+            <ul class="footer-links">
+              <li><a href="#">About</a></li>
+              <li><a href="#">Features</a></li>
+              <li><a href="#">Works</a></li>
+              <li><a href="#">Career</a></li>
+            </ul>
+          </div>
+
+          <!-- Help Column -->
+          <div class="footer-column">
+            <h4>HELP</h4>
+            <ul class="footer-links">
+              <li><a href="#">Customer Support</a></li>
+              <li><a href="#">Delivery Details</a></li>
+              <li><a href="#">Terms &amp; Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <!-- FAQ Column -->
+          <div class="footer-column">
+            <h4>FAQ</h4>
+            <ul class="footer-links">
+              <li><a href="#">Account</a></li>
+              <li><a href="#">Manage Deliveries</a></li>
+              <li><a href="#">Orders</a></li>
+              <li><a href="#">Payments</a></li>
+            </ul>
+          </div>
+
+          <!-- Resources Column -->
+          <div class="footer-column">
+            <h4>RESOURCES</h4>
+            <ul class="footer-links">
+              <li><a href="#">Free eBooks</a></li>
+              <li><a href="#">Development Tutorial</a></li>
+              <li><a href="#">How to - Blog</a></li>
+              <li><a href="#">Youtube Playlist</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="payment-methods">
+            <img src="assets/images/payments.svg" alt="payment-methods" />
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+      <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

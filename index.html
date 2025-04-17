@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fitlab | Clothing Store</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Top Banner -->
+    <div class="top-banner">
+      <div class="container">
+        <p>
+          Sign up and get 20% off your first order.
+          <a href="login.html#signup">Sign Up Now</a>
+        </p>
+        <button class="close-banner" aria-label="Close Banner">×</button>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html" class="logo-link">
+            <img src="assets/images/fitlab-logo-light.svg" alt="brand logo" />
+          </a>
+        </div>
+
+        <button
+          class="mobile-menu-toggle"
+          aria-expanded="false"
+          aria-label="Toggle navigation menu"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="nav-links">
+          <ul>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">On Sale</a></li>
+            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#">Brands</a></li>
+          </ul>
+        </div>
+
+        <div class="search-bar">
+          <div class="search-container">
+            <span class="search-icon"><i class="fas fa-search"></i> </span>
+            <input
+              type="text"
+              class="search-input"
+              placeholder="Search for products..."
+            />
+          </div>
+        </div>
+
+        <div class="nav-icons">
+          <button class="icon-button" aria-label="Cart button">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </button>
+          <button class="icon-button" aria-label="User button" id="userButton">
+            <i class="fa-solid fa-circle-user"></i>
+          </button>
+          <button class="logout-button" id="logoutButton" style="display: none">
+            Logout
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-text">
+          <h1>
+            FIND CLOTHES<br />
+            THAT MATCHES<br />
+            YOUR STYLE
+          </h1>
+          <p>
+            Browse through our diverse range of meticulously crafted garments,
+            designed to bring out your individuality and cater to your sense of
+            style.
+          </p>
+          <button>Shop Now</button>
+          <div class="stats">
+            <div>
+              <strong>200+</strong>
+              <p>International Brands</p>
+            </div>
+            <div>
+              <strong>2,000+</strong>
+              <p>High-Quality Products</p>
+            </div>
+            <div>
+              <strong>30,000+</strong>
+              <p>Happy Customers</p>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="assets/images/hero-img.webp" alt="Hero model" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Brand Logos -->
+    <section class="brands">
+      <div class="container">
+        <div class="brand-names">
+          <img src="assets/images/versace.svg" alt="Versace logo" />
+          <img src="assets/images/zara.svg" alt="Zara logo" />
+          <img src="assets/images/gucci.svg" alt="Gucci logo" />
+          <img src="assets/images/prada.svg" alt="Prada logo" />
+          <img src="assets/images/calvin.svg" alt="Calvin Klein logo" />
+        </div>
+      </div>
+    </section>
+
+    <!-- New Arrivals Section -->
+    <section class="products-section">
+      <div class="container">
+        <h2>New Arrivals</h2>
+        <div class="products-container" id="new-arrivals">
+          <div
+            class="product-card"
+            tabindex="0"
+            aria-label="Product: Urban Comfort Hoodie"
+          >
+            <div class="product-image">
+              <img
+                src="assets/images/hoddie-1-white.png"
+                alt="white hoodie"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="product-name">Urban Comfort Hoodie</h3>
+            <div class="product-rating" aria-label="Rating: 4.5 out of 5 stars">
+              <span class="stars">
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star-half-stroke" aria-hidden="true"></i>
+              </span>
+              <span class="rating-score">4.5/5</span>
+            </div>
+            <div class="product-price">
+              <span
+                class="current-price"
+                aria-label="Current price: 120 dollars"
+                >$120</span
+              >
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="assets/images/hoddie-2-blue.png"
+                alt="blue hoodie"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="product-name">Power Up Hoodie</h3>
+            <div class="product-rating">
+              <span class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+                <i class="fa-regular fa-star"></i>
+              </span>
+              <span class="rating-score">3.5/5</span>
+            </div>
+            <div class="product-price">
+              <span class="current-price">$240</span>
+              <span class="original-price">$260</span>
+              <span class="discount-badge">-8%</span>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="assets/images/hoddie-4.png"
+                alt="Classic Crew Hoodie"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="product-name">Classic Crew Hoodie</h3>
+            <div class="product-rating">
+              <span class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+              </span>
+              <span class="rating-score">4.5/5</span>
+            </div>
+            <div class="product-price">
+              <span class="current-price">$180</span>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="assets/images/hoddie-3-grey.png"
+                alt="Trainer Hoodie"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="product-name">Trainer Hoodie</h3>
+            <div class="product-rating">
+              <span class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+              </span>
+              <span class="rating-score">4.5/5</span>
+            </div>
+            <div class="product-price">
+              <span class="current-price">$130</span>
+              <span class="original-price">$160</span>
+              <span class="discount-badge">-19%</span>
+            </div>
+          </div>
+        </div>
+        <button class="view-all">View All</button>
+      </div>
+    </section>
+
+    <!-- Top Selling Section -->
+    <section class="products-section top-selling">
+      <div class="container">
+        <h2>Top Selling</h2>
+        <div class="products-container" id="top-selling">
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="assets/images/hoddie-1-white.png"
+                alt="white hoodie"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="product-name">Urban Comfort Hoodie</h3>
+            <div class="product-rating">
+              <span class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+              </span>
+              <span class="rating-score">4.5/5</span>
+            </div>
+            <div class="product-price">
+              <span class="current-price">$120</span>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="assets/images/hoddie-2-blue.png"
+                alt="blue hoodie"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="product-name">Power Up Hoodie</h3>
+            <div class="product-rating">
+              <span class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+                <i class="fa-regular fa-star"></i>
+              </span>
+              <span class="rating-score">3.5/5</span>
+            </div>
+            <div class="product-price">
+              <span class="current-price">$240</span>
+              <span class="original-price">$260</span>
+              <span class="discount-badge">-8%</span>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="assets/images/hoddie-4.png"
+                alt="Classic Crew Hoodie"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="product-name">Classic Crew Hoodie</h3>
+            <div class="product-rating">
+              <span class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+              </span>
+              <span class="rating-score">4.5/5</span>
+            </div>
+            <div class="product-price">
+              <span class="current-price">$180</span>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-image">
+              <img
+                src="assets/images/hoddie-3-grey.png"
+                alt="Trainer Hoodie"
+                loading="lazy"
+              />
+            </div>
+            <h3 class="product-name">Trainer Hoodie</h3>
+            <div class="product-rating">
+              <span class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+              </span>
+              <span class="rating-score">4.5/5</span>
+            </div>
+            <div class="product-price">
+              <span class="current-price">$130</span>
+              <span class="original-price">$160</span>
+              <span class="discount-badge">-19%</span>
+            </div>
+          </div>
+        </div>
+        <button class="view-all">View All</button>
+      </div>
+    </section>
+
+    <!-- Browse by Dress Style Section -->
+    <section class="browse-style-section">
+      <div class="container">
+        <h2>BROWSE BY DRESS STYLE</h2>
+        <div class="style-categories">
+          <a href="#" class="style-category first">
+            <div class="style-image">
+              <img
+                src="assets/images/casual.webp"
+                alt="Casual Style"
+                loading="lazy"
+              />
+            </div>
+            <span class="style-name">Casual</span>
+          </a>
+          <a href="#" class="style-category second">
+            <div class="style-image">
+              <img
+                src="assets/images/formal.webp"
+                alt="Formal Style"
+                loading="lazy"
+              />
+            </div>
+            <span class="style-name">Formal</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Happy Customers Section -->
+    <section class="testimonials-section">
+      <div class="container">
+        <div class="testimonials-header">
+          <h2>OUR HAPPY CUSTOMERS</h2>
+          <div class="testimonials-navigation">
+            <button class="nav-arrow prev-arrow">
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <button class="nav-arrow next-arrow">
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="testimonials-slider">
+          <div class="testimonial">
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="customer">
+              <span class="customer-name">Sarah M.</span>
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <p class="testimonial-text">
+              "I am blown away by the quality and style of the clothes I
+              received from Fitlab. Their casual collection meets all my needs.
+              Really glad I bought here; exceeded my expectations."
+            </p>
+          </div>
+
+          <div class="testimonial">
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="customer">
+              <span class="customer-name">Alex K.</span>
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <p class="testimonial-text">
+              "Finding clothes that align with my personal style can be
+              challenging, but I discovered some remarkable pieces. The range of
+              styles available is truly remarkable, catering to a variety of
+              tastes and occasions."
+            </p>
+          </div>
+
+          <div class="testimonial">
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="customer">
+              <span class="customer-name">James L.</span>
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <p class="testimonial-text">
+              "As someone who's always on the lookout for contemporary fashion,
+              I'm thrilled to have stumbled upon these suits. The quality is
+              great and the cuts are perfectly tailored to my body frame, but
+              also my good taste."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter / CTA Section -->
+    <section class="newsletter-section">
+      <div class="container">
+        <div class="newsletter-card">
+          <div class="newsletter-content">
+            <h2>STAY UP TO DATE ABOUT<br />OUR LATEST OFFERS</h2>
+          </div>
+          <div class="newsletter-form" role="form">
+            <div class="input-group">
+              <span class="input-icon">
+                <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+              </span>
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                class="newsletter-input"
+                aria-label="Email address"
+                required
+              />
+            </div>
+            <button class="newsletter-btn" type="submit">
+              Subscribe to Newsletter
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <!-- Brand Column -->
+          <div class="footer-column brand-column">
+            <div class="footer-logo">
+              <a href="index.html" class="logo-link">
+                <img
+                  src="assets/images/fitlab-logo-light.svg"
+                  alt="brand logo"
+                />
+              </a>
+            </div>
+            <p class="brand-description">
+              We have clothes that suits your style and which you're proud to
+              wear. From sleek to street, we've got you covered.
+            </p>
+
+            <div class="social-icons">
+              <a href="#" class="social-icon"
+                ><i class="fa-brands fa-twitter"></i
+              ></a>
+              <a href="#" class="social-icon"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+              <a href="#" class="social-icon"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Company Column -->
+          <div class="footer-column">
+            <h4>COMPANY</h4>
+            <ul class="footer-links">
+              <li><a href="#">About</a></li>
+              <li><a href="#">Features</a></li>
+              <li><a href="#">Works</a></li>
+              <li><a href="#">Career</a></li>
+            </ul>
+          </div>
+
+          <!-- Help Column -->
+          <div class="footer-column">
+            <h4>HELP</h4>
+            <ul class="footer-links">
+              <li><a href="#">Customer Support</a></li>
+              <li><a href="#">Delivery Details</a></li>
+              <li><a href="#">Terms &amp; Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <!-- FAQ Column -->
+          <div class="footer-column">
+            <h4>FAQ</h4>
+            <ul class="footer-links">
+              <li><a href="#">Account</a></li>
+              <li><a href="#">Manage Deliveries</a></li>
+              <li><a href="#">Orders</a></li>
+              <li><a href="#">Payments</a></li>
+            </ul>
+          </div>
+
+          <!-- Resources Column -->
+          <div class="footer-column">
+            <h4>RESOURCES</h4>
+            <ul class="footer-links">
+              <li><a href="#">Free eBooks</a></li>
+              <li><a href="#">Development Tutorial</a></li>
+              <li><a href="#">How to - Blog</a></li>
+              <li><a href="#">Youtube Playlist</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="payment-methods">
+            <img src="assets/images/payments.svg" alt="payment-methods" />
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+      <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <script src="products.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
