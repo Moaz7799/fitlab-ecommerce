@@ -2135,3 +2135,222 @@ body {
 .logout-button:hover {
   background-color: #f0f0f0;
 }
+
+/* Cart Notification */
+.cart-notification {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 1001;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cart-notification.show {
+  opacity: 1;
+}
+
+/* Cart Count Badge */
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #ff3b30;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 11px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 50px auto;
+  padding: 30px;
+  max-width: 900px;
+  border-radius: 10px;
+  position: relative;
+  animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+}
+
+.close-modal:hover {
+  color: #000;
+}
+
+.modal-body {
+  display: flex;
+  gap: 30px;
+}
+
+.modal-image {
+  flex: 1;
+}
+
+.modal-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.modal-details {
+  flex: 1;
+  padding: 10px;
+}
+
+.modal-details h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.modal-rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.modal-price {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.modal-price .current-price {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.modal-price .original-price {
+  font-size: 18px;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.modal-price .discount-badge {
+  background-color: #ff3b30;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.modal-description {
+  margin-bottom: 25px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.modal-options {
+  margin-bottom: 25px;
+}
+
+.modal-options select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.modal-options input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+#modalAddToCart {
+  width: 100%;
+  padding: 15px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+#modalAddToCart:hover {
+  background-color: #333;
+}
+
+/* Responsive Modal */
+@media (max-width: 768px) {
+  .modal-content {
+    margin: 20px auto;
+    padding: 20px;
+    width: 90%;
+  }
+
+  .modal-body {
+    flex-direction: column;
+  }
+
+  .modal-details h2 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    padding: 15px;
+  }
+
+  .modal-details h2 {
+    font-size: 20px;
+  }
+
+  .modal-price .current-price {
+    font-size: 20px;
+  }
+}

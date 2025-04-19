@@ -41,10 +41,12 @@
 
         <div class="nav-links">
           <ul>
-            <li><a href="#">Shop</a></li>
-            <li><a href="#">On Sale</a></li>
-            <li><a href="#">New Arrivals</a></li>
-            <li><a href="#">Brands</a></li>
+            <li><a href="products.html">Shop</a></li>
+            <li><a href="products.html?filter=on-sale">On Sale</a></li>
+            <li>
+              <a href="products.html?filter=new-arrivals">New Arrivals</a>
+            </li>
+            <li><a href="products.html?filter=brands">Brands</a></li>
           </ul>
         </div>
 
@@ -60,9 +62,16 @@
         </div>
 
         <div class="nav-icons">
+<<<<<<< HEAD
           <button class="icon-button" aria-label="Cart button">
             <a href="Cart\cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
           </button>
+=======
+          <a href="cart.html" class="icon-button" aria-label="Cart button">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-count"></span>
+          </a>
+>>>>>>> afc2e27 (Add login, cart page, products page, checkout modal, and product modal)
           <button class="icon-button" aria-label="User button" id="userButton">
             <i class="fa-solid fa-circle-user"></i>
           </button>
@@ -87,7 +96,10 @@
             designed to bring out your individuality and cater to your sense of
             style.
           </p>
-          <button>Shop Now</button>
+          <button onclick="window.location.href='products.html'">
+            Shop Now
+          </button>
+
           <div class="stats">
             <div>
               <strong>200+</strong>
@@ -232,7 +244,9 @@
             </div>
           </div>
         </div>
-        <button class="view-all">View All</button>
+        <button class="view-all" onclick="window.location.href='products.html'">
+          View All
+        </button>
       </div>
     </section>
 
@@ -338,7 +352,9 @@
             </div>
           </div>
         </div>
-        <button class="view-all">View All</button>
+        <button class="view-all" onclick="window.location.href='products.html'">
+          View All
+        </button>
       </div>
     </section>
 
@@ -347,7 +363,7 @@
       <div class="container">
         <h2>BROWSE BY DRESS STYLE</h2>
         <div class="style-categories">
-          <a href="#" class="style-category first">
+          <a href="products.html?style=casual" class="style-category first">
             <div class="style-image">
               <img
                 src="assets/images/casual.webp"
@@ -357,7 +373,7 @@
             </div>
             <span class="style-name">Casual</span>
           </a>
-          <a href="#" class="style-category second">
+          <a href="products.html?style=formal" class="style-category second">
             <div class="style-image">
               <img
                 src="assets/images/formal.webp"
@@ -538,9 +554,9 @@
           <div class="footer-column">
             <h4>FAQ</h4>
             <ul class="footer-links">
-              <li><a href="#">Account</a></li>
+              <li><a href="login.html">Account</a></li>
               <li><a href="#">Manage Deliveries</a></li>
-              <li><a href="#">Orders</a></li>
+              <li><a href="cart.html">Orders</a></li>
               <li><a href="#">Payments</a></li>
             </ul>
           </div>

@@ -138,6 +138,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       // Store user data with hashed password (basic demo version)
+      const userId = "user_" + Date.now(); // Generate unique user ID
+      localStorage.setItem("userId", userId);
       localStorage.setItem(
         "userName",
         document.getElementById("signupName").value
