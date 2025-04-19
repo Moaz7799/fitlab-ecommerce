@@ -4,11 +4,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-a{
 
-  text-decoration: none;
-  color: inherit;
-}
 /* FONT */
 @font-face {
   font-family: "Satoshi";
@@ -1038,6 +1034,7 @@ body {
   border-radius: 40px;
   margin: 15px auto;
   padding: 70px 0;
+  /* max-width: fit-content; */
 }
 
 .browse-style-section h2 {
@@ -1152,7 +1149,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .testimonial {
@@ -1251,6 +1248,7 @@ body {
   .browse-style-section .container {
     padding: 40px 15px;
     border-radius: 30px;
+    max-width: fit-content;
   }
 
   .style-name {
@@ -1289,6 +1287,7 @@ body {
     margin: 10px;
     padding: 30px 10px;
     border-radius: 20px;
+    max-width: fit-content;
   }
 
   .style-categories {
@@ -2353,4 +2352,8 @@ body {
   .modal-price .current-price {
     font-size: 20px;
   }
+}
+
+.success-message {
+  transition: opacity 0.5s ease;
 }
