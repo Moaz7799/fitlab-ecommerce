@@ -608,9 +608,6 @@ function generatePagination(totalPages) {
   return paginationHTML;
 }
 
-// The issue is in how the modal content is structured and how event listeners are attached.
-// Let's fix the showProductModal and related functions:
-
 // Function to show product modal
 function showProductModal(product) {
   const modal = document.getElementById("productModal");

@@ -1,15 +1,15 @@
 console.log("Welcome to Fitlab!");
 
-// ===== SINGLE DOMContentLoaded LISTENER ===== //
+// Main application entry point
 document.addEventListener("DOMContentLoaded", function () {
-  // 1. First check authentication
+  // Authentication check - redirect to login if not authenticated
   const currentPage = window.location.pathname.split("/").pop();
   if (currentPage === "index.html" && !localStorage.getItem("isLoggedIn")) {
     window.location.href = "login.html";
     return;
   }
 
-  // 2. Mobile menu toggle
+  // Mobile menu toggle functionality
   document
     .querySelector(".mobile-menu-toggle")
     ?.addEventListener("click", function () {
@@ -17,14 +17,14 @@ document.addEventListener("DOMContentLoaded", function () {
       document.querySelector(".search-bar").classList.toggle("active");
     });
 
-  // 3. Close banner
+  // Banner close functionality
   document
     .querySelector(".close-banner")
     ?.addEventListener("click", function () {
       document.querySelector(".top-banner").style.display = "none";
     });
 
-  // 4. Back to top button
+  // Back to top button functionality
   const backToTopButton = document.querySelector(".back-to-top");
   if (backToTopButton) {
     window.addEventListener("scroll", function () {
@@ -39,19 +39,19 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   }
 
-  // 5. Product images loading simulation
+  // Product loading simulation for better UX
   const productImages = document.querySelectorAll(".product-image");
   const productNames = document.querySelectorAll(".product-name");
   const productRatings = document.querySelectorAll(".product-rating");
   const productPrices = document.querySelectorAll(".product-price");
 
-  // Add loading state
+  // Add loading state classes
   productImages.forEach((image) => image.classList.add("loading"));
   productNames.forEach((name) => name.classList.add("loading"));
   productRatings.forEach((rating) => rating.classList.add("loading"));
   productPrices.forEach((price) => price.classList.add("loading"));
 
-  // Hide actual content during loading
+  // Hide content during loading
   const hideContent = () => {
     productImages.forEach((image) => {
       const img = image.querySelector("img");
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   };
 
-  // Restore content after loading
+  // Show content after loading
   const showContent = () => {
     productImages.forEach((image) => {
       image.classList.remove("loading");
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
   hideContent();
   setTimeout(showContent, 1500);
 
-  // 6. Lazy loading for images
+  // Lazy loading implementation for images
   if ("IntersectionObserver" in window) {
     const lazyImages = document.querySelectorAll('img[loading="lazy"]');
     const imageObserver = new IntersectionObserver((entries, observer) => {
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
     lazyImages.forEach((img) => imageObserver.observe(img));
   }
 
-  // 7. Update UI for logged in users
+  // Update UI for logged in users
   if (localStorage.getItem("isLoggedIn") === "true") {
     const userEmail = localStorage.getItem("userEmail");
     const userName = localStorage.getItem("userName");
@@ -141,12 +141,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // 8. Smooth scroll for logo link
+  // Smooth scroll for logo link
   document
     .querySelectorAll('.footer-logo a[href="index.html"]')
     .forEach((link) => {
       link.addEventListener("click", function (e) {
-        // Only if we're already on index.html
         if (window.location.pathname.split("/").pop() === "index.html") {
           e.preventDefault();
           window.scrollTo({
@@ -154,18 +153,12 @@ document.addEventListener("DOMContentLoaded", function () {
             behavior: "smooth",
           });
         }
-        // Otherwise, the normal link behavior will take us to index.html
       });
     });
 });
 
+// Logout function - clears session data and redirects to login
 function logout() {
-  // Clear only session-related items
   localStorage.removeItem("isLoggedIn");
-
-  // Optional: Clear cart or other session-specific data
-  // localStorage.removeItem("cartItems");
-
-  // Redirect to login with a flag to show logout message
   window.location.href = "login.html?logout=true";
 }

@@ -1,16 +1,17 @@
+2; // Initialize authentication functionality when DOM is loaded
 document.addEventListener("DOMContentLoaded", function () {
-  // Form elements
+  // Get form elements
   const loginForm = document.querySelector(".login-form");
   const signupForm = document.querySelector(".signup-form");
   const loginFormElement = document.getElementById("loginForm");
   const signupFormElement = document.getElementById("signupForm");
 
-  // Check for #signup in URL and show signup form if present
+  // Check URL hash for signup form
   if (window.location.hash === "#signup") {
     showSignupForm();
   }
 
-  // Add this helper function:
+  // Helper function to show signup form and scroll to auth section
   function showSignupForm() {
     const loginForm = document.querySelector(".login-form");
     const signupForm = document.querySelector(".signup-form");
@@ -18,27 +19,24 @@ document.addEventListener("DOMContentLoaded", function () {
     if (loginForm && signupForm) {
       loginForm.classList.remove("active");
       signupForm.classList.add("active");
-
-      // Scroll to the auth section
       document.querySelector(".auth-section")?.scrollIntoView({
         behavior: "smooth",
       });
     }
   }
 
+  // Handle signup link click in top banner
   document
     .getElementById("topBannerSignupLink")
     ?.addEventListener("click", function (e) {
-      // Only prevent default if we're already on login page
       if (window.location.pathname.endsWith("login.html")) {
         e.preventDefault();
         showSignupForm();
-        // Update URL without reload
         window.history.pushState(null, null, "#signup");
       }
     });
 
-  // Toggle between forms
+  // Toggle between login and signup forms
   document
     .getElementById("showSignup")
     ?.addEventListener("click", function (e) {
@@ -53,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
     loginForm?.classList.add("active");
   });
 
-  // Password visibility toggle
+  // Password visibility toggle functionality
   document.querySelectorAll(".toggle-password").forEach((button) => {
     button.addEventListener("click", function () {
       const input = this.parentElement.querySelector("input");
@@ -66,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Password strength indicator
+  // Password strength indicator functionality
   document
     .getElementById("signupPassword")
     ?.addEventListener("input", function () {
@@ -77,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Reset UI
       strengthBars.forEach((bar) => (bar.style.backgroundColor = "#e0e0e0"));
 
-      // Calculate strength (1-5)
+      // Calculate password strength (1-5)
       const strength = Math.min(
         (password.length > 0) +
           (password.length >= 8) +
@@ -87,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
         3
       );
 
-      // Update UI
+      // Update UI based on strength
       if (password.length === 0) {
         strengthText.textContent = "Password strength";
       } else {
@@ -100,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-  // Form submissions
+  // Handle login form submission
   if (loginFormElement) {
     loginFormElement.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -124,6 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Handle signup form submission
   if (signupFormElement) {
     signupFormElement.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -137,15 +136,15 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      // Store user data with hashed password (basic demo version)
-      const userId = "user_" + Date.now(); // Generate unique user ID
+      // Store user data with hashed password
+      const userId = "user_" + Date.now();
       localStorage.setItem("userId", userId);
       localStorage.setItem(
         "userName",
         document.getElementById("signupName").value
       );
       localStorage.setItem("userEmail", email);
-      localStorage.setItem("userPasswordHash", simpleHash(password)); // Store hashed version
+      localStorage.setItem("userPasswordHash", simpleHash(password));
       localStorage.setItem("isLoggedIn", "true");
 
       alert("Account created! Redirecting...");
@@ -154,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// Add this helper function at the bottom of auth.js
+// Simple hash function for password hashing (for demo purposes)
 function simpleHash(str) {
   let hash = 0;
   for (let i = 0; i < str.length; i++) {

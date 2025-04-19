@@ -1,10 +1,12 @@
+// Initialize cart functionality when DOM is loaded
 document.addEventListener("DOMContentLoaded", function () {
-  // Check if user is logged in
+  // Check user authentication
   const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
   const userEmail = localStorage.getItem("userEmail");
   const userId = localStorage.getItem("userId");
   const cartKey = `cart_${userId}`;
 
+  // Redirect to login if not authenticated
   if (!isLoggedIn || !userEmail) {
     window.location.href = "login.html";
     return;
@@ -40,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
   updateOrderSummary();
   updateCartCount();
 
-  // Function to render cart items
+  // Render cart items in the UI
   function renderCartItems() {
     const cartItemsContainer = document.querySelector(".cart-items");
     if (!cartItemsContainer) return;
@@ -53,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Render each cart item
+    // Create HTML for each cart item
     cartItems.forEach((item, index) => {
       const cartItemElement = document.createElement("div");
       cartItemElement.className = "cart-item";
@@ -102,9 +104,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Function to update quantity
+  // Update item quantity in cart
   function updateQuantity(index, change) {
-    // Ensure cartItems exists and has the item at the index
     if (!cartItems || !cartItems[index]) return;
 
     const newQuantity = cartItems[index].quantity + change;
@@ -117,9 +118,8 @@ document.addEventListener("DOMContentLoaded", function () {
     updateCartCount();
   }
 
-  // Function to remove item
+  // Remove item from cart
   function removeItem(index) {
-    // Ensure cartItems exists and has the item at the index
     if (!cartItems || !cartItems[index]) return;
 
     cartItems.splice(index, 1);
@@ -129,19 +129,18 @@ document.addEventListener("DOMContentLoaded", function () {
     updateCartCount();
   }
 
-  // Function to save cart to localStorage
+  // Save cart to localStorage
   function saveCart() {
     localStorage.setItem(cartKey, JSON.stringify(cartItems));
   }
 
-  // Function to calculate order summary
+  // Update order summary with totals
   function updateOrderSummary() {
     const orderSummary = document.querySelector(".order-summary");
     if (!orderSummary) return;
 
     // Calculate subtotal
     const subtotal = cartItems.reduce((sum, item) => {
-      // Extract numeric value from price string (e.g., "$145" -> 145)
       const price = parseFloat(item.price.replace(/[^0-9.-]+/g, ""));
       return sum + price * item.quantity;
     }, 0);
@@ -252,7 +251,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Function to update checkout modal content
+  // Update checkout modal content
   function updateCheckoutModal() {
     const checkoutItems = document.getElementById("checkoutItems");
     const checkoutSubtotal = document.getElementById("checkoutSubtotal");
@@ -325,7 +324,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Function to process the order
+  // Process the order
   function processOrder() {
     // Get selected payment method
     const selectedPayment = document.querySelector(
@@ -372,7 +371,7 @@ document.addEventListener("DOMContentLoaded", function () {
     updateCartCount();
   }
 
-  // Function to update cart count
+  // Update cart count in navigation
   function updateCartCount() {
     const cartCountElements = document.querySelectorAll(".cart-count");
     if (!cartCountElements || cartCountElements.length === 0) return;
@@ -383,7 +382,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Initialize checkout modal functionality if it exists
+  // Initialize checkout modal functionality
   const checkoutModal = document.querySelector(".checkout-modal");
   if (checkoutModal) {
     const closeModalBtn = checkoutModal.querySelector(".close-modal");
