@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitLab Homepage</title>
+    <!-- Google font for the page -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Reset default styling for all elements */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+      }
+
+      /* General body styling */
+      body {
+        background: #fff; /* White background */
+        color: #000; /* Black text color */
+      }
+
+      /* Styling for the top bar section */
+      .top-bar {
+        background: #000; /* Black background */
+        color: #fff; /* White text */
+        text-align: center;
+        font-size: 14px;
+        padding: 8px 0;
+      }
+
+      /* Link inside the top bar */
+      .top-bar a {
+        color: #fff; /* White text color */
+        text-decoration: underline;
+      }
+
+      /* Navbar container styling */
+      .navbar {
+        display: flex;
+        justify-content: space-between; /* Align left and right sides of the navbar */
+        align-items: center;
+        padding: 16px 32px;
+        border-bottom: 1px solid #ddd; /* Light gray border */
+      }
+
+      /* Navbar left and right sections styling */
+      .navbar-left,
+      .navbar-right {
+        display: flex;
+        align-items: center;
+        gap: 24px; /* Space between items */
+      }
+
+      /* Logo styling */
+      .logo {
+        font-weight: 800; /* Bold font */
+        font-size: 24px;
+      }
+
+      /* Logo span styling */
+      .logo span {
+        background: #000; /* Black background */
+        color: #fff; /* White text */
+        padding: 2px 6px;
+        margin-right: 4px;
+      }
+
+      /* Search input box styling */
+      .search-input {
+        padding: 8px;
+        border-radius: 6px; /* Rounded corners */
+        border: 1px solid #ccc; /* Light gray border */
+        width: 500px; /* Set width of search input */
+      }
+
+      /* Hero section styling */
+      .hero {
+        display: flex;
+        justify-content: space-between; /* Space between text and image */
+        align-items: center;
+        padding: 48px 32px;
+        background: #f4f4f4; /* Light gray background */
+      }
+
+      /* Text inside the hero section */
+      .hero-text h1 {
+        font-size: 42px;
+        font-weight: 800;
+        margin-bottom: 16px;
+      }
+
+      /* Paragraph text inside hero section */
+      .hero-text p {
+        max-width: 400px; /* Limit width of paragraph */
+        margin-bottom: 20px;
+        color: #444; /* Dark gray text */
+      }
+
+      /* Button styling inside the hero section */
+      .hero-text button {
+        background: #000; /* Black background */
+        color: #fff; /* White text */
+        padding: 12px 24px;
+        border: none;
+        border-radius: 6px; /* Rounded corners */
+        cursor: pointer; /* Pointer cursor */
+      }
+
+      /* Stats section inside the hero */
+      .stats {
+        display: flex;
+        gap: 24px; /* Space between stats */
+        margin-top: 24px;
+      }
+
+      /* Styling for individual stat boxes */
+      .stats div {
+        font-size: 18px;
+        color: #333; /* Dark gray text */
+        font-weight: bold;
+      }
+
+      /* Brands bar section styling */
+      .brands-bar {
+        display: flex;
+        justify-content: space-around; /* Space between brand names */
+        background: #000; /* Black background */
+        color: #fff; /* White text */
+        padding: 16px 0;
+        font-size: 20px;
+        
+        background-color: #000;
+      }
+      
+      
+      /* Section title styling */
+      .section-title {
+        text-align: center;
+        font-size: 28px;
+        font-weight: 800;
+        margin: 40px 0 24px; /* Margin on top and bottom */
+      }
+
+      /* Styling for the products section */
+      .products {
+        display: flex;
+        justify-content: center; /* Center products */
+        gap: 24px; /* Space between product cards */
+        padding: 0 32px; /* Padding around the section */
+        flex-wrap: wrap; /* Allow items to wrap in smaller screens */
+      }
+
+      /* Individual product card styling */
+      .product-card {
+        width: 220px;
+        background: #f9f9f9; /* Light gray background */
+        border-radius: 12px; /* Rounded corners */
+        padding: 16px;
+        text-align: center;
+        display: flex; /* Make it a flex container */
+        flex-direction: column; /* Stack items vertically */
+        height: 300px; /* Set a fixed height for the card */
+      }
+
+      /* Product image styling */
+      .product-card img {
+        width: 100%;
+        height: auto;
+        max-height: 200px; /* Ensure the image doesn't stretch too long */
+        object-fit: cover; /* Crop the image if it overflows */
+        border-radius: 8px; /* Rounded corners */
+        margin-bottom: 12px;
+      }
+
+      /* Product title text styling */
+      .product-title {
+        font-size: 14px;
+        margin: 8px 0;
+      }
+
+      /* Stars for ratings */
+      .stars {
+        font-size: 14px;
+        color: #f5c518; /* Yellow color for stars */
+        margin-bottom: 4px;
+      }
+
+      /* Price text styling */
+      .price {
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      /* Old price (struck-through) styling */
+      .old-price {
+        text-decoration: line-through;
+        font-size: 14px;
+        color: #888; /* Light gray */
+        margin-left: 6px;
+      }
+
+      /* Discount percentage styling */
+      .discount {
+        color: red; /* Red color for discount */
+        font-size: 14px;
+        margin-left: 6px;
+      }
+
+      /* View all button styling */
+      .view-all {
+        display: block;
+        margin: 32px auto; /* Center the button */
+        padding: 16px 40px; /* Wider padding for a wider button */
+        background: #f4f4f4; /* Lighter background color */
+        color: #000; /* Black text */
+        border: 1px solid #000; /* Darker border color */
+        border-radius: 6px; /* Rounded corners */
+        cursor: pointer;
+        transition: all 0.3s ease; /* Smooth transition for hover effect */
+      }
+
+      /* Optional: Add a hover effect to make the border and background stand out */
+      .view-all:hover {
+        background: #000; /* Change background to black on hover */
+        color: #fff; /* Change text color to white on hover */
+        border-color: #fff; /* Change border color to white on hover */
+      }
+      .icon {
+        width: 20px;
+        margin: 0px 10px;
+      }
+
+      a{text-decoration: none;}
+
+      button{transition: transform 0.3s ease, background 0.3s ease;}
+      button:hover{transform: scale(1.05);}
+    </style>
+  </head>
+  <body>
+    <!-- Top Bar Section -->
+    <div class="top-bar">
+      Sign up and get 20% off on your first order. <a href="#">Sign Up Now</a>
+    </div>
+
+    <!-- Navbar Section -->
+    <div class="navbar">
+      <div class="navbar-left">
+        <div class="logo"><span>FIT</span>LAB</div>
+        <!-- Logo -->
+        <div>Shop</div>
+        <div>On Sale</div>
+        <div>New Arrivals</div>
+        <div>Brands</div>
+      </div>
+      <div class="navbar-right">
+        <input
+          class="search-input"
+          type="text"
+          placeholder="🔍Search for products..."
+        />
+        <!-- Search Input -->
+        <div id="Shopping_cart"><a href="Cart\cart.html">🛒</a></div>
+        <!-- Shopping Cart Icon -->
+        <div>
+          <img
+            class="icon"
+            src="https://static.vecteezy.com/system/resources/previews/002/318/271/non_2x/user-profile-icon-free-vector.jpg"
+          />
+        </div>
+        <!-- User Profile Icon -->
+      </div>
+    </div>
+
+    <!-- Hero Section with Introduction -->
+    <div class="hero">
+      <div class="hero-text">
+        <h1>FIND CLOTHES<br />THAT MATCHES<br />YOUR STYLE</h1>
+        <p>
+          Browse through our diverse range of meticulously crafted garments,
+          designed to bring out your individuality and cater to your sense of
+          style.
+        </p>
+        <button>Shop Now</button>
+        <!-- Shop Now Button -->
+        <div class="stats">
+          <div><strong>200+</strong><br />International Brands</div>
+          <div><strong>2,000+</strong><br />High-Quality Products</div>
+          <div><strong>30,000+</strong><br />Happy Customers</div>
+        </div>
+      </div>
+      <!-- Hero Image (should replace with a valid image URL) -->
+      <img
+        src="https://communityclothing.co.uk/cdn/shop/files/Male_Short-Sleeve-T-Shirt_Black_Thigh-Up-Front_Community-Clothing_2048x.jpg?v=1741085225"
+        alt="model"
+        width="300"
+      />
+    </div>
+
+    <!-- Brands Bar Section -->
+    <div class="brands-bar">
+      <div>VERSACE</div>
+      <div>ZARA</div>
+      <div>GUCCI</div>
+      <div>PRADA</div>
+    <div>Calvin Klein</div>
+    
+    </div>
+
+    <!-- New Arrivals Section -->
+    <div class="section-title">NEW ARRIVALS</div>
+    <div class="products">
+      <!-- Product Cards -->
+      <div class="product-card">
+        <img
+          src="https://elegantsparkling.com/wp-content/uploads/2024/10/Tshirt.webp"
+          alt="T-shirt"
+        />
+        <div class="product-title">T-shirt with Tape Details</div>
+        <div class="stars">⭐⭐⭐⭐ 4/5</div>
+        <div class="price">$120</div>
+      </div>
+      <div class="product-card">
+        <img
+          src="https://cdn.linenclub.com/media/catalog/product/cache/d8d099ed0f54be45d4eb2c71c1a3b40d/c/o/codnsdj929543_1.jpg"
+          alt="Jeans"
+        />
+        <div class="product-title">Skinny Fit Jeans</div>
+        <div class="stars">⭐⭐⭐ 3/5</div>
+        <div class="price">
+          $240 <span class="old-price">$260</span
+          ><span class="discount">-30%</span>
+        </div>
+      </div>
+      <div class="product-card">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm35QVArKaDgpyo08bauCQa1EIoDZRzO6Yvw&s"
+          alt="Checkered Shirt"
+        />
+        <div class="product-title">Checkered Shirt</div>
+        <div class="stars">⭐⭐ 2/5</div>
+        <div class="price">$180</div>
+      </div>
+      <div class="product-card">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnA27lePOtHQJ53rvY5-81gBamyz7QaxrMMg&s"
+          alt="Orange T-shirt"
+        />
+        <div class="product-title">Sleeve Striped T-shirt</div>
+        <div class="stars">⭐⭐⭐ 3/5</div>
+        <div class="price">
+          $130 <span class="old-price">$160</span
+          ><span class="discount">-30%</span>
+        </div>
+      </div>
+    </div>
+    <!-- View All Button -->
+    <button class="view-all">View All</button>
+  </body>
+</html>

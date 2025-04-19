@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cart.css">
+    <script src="https://kit.fontawesome.com/1f7d13db0f.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <header><a href="../index.html" class="Logo"><img src="white logo.svg" width="250" alt="Fitlab"></a>
+        <a href="">Shop</a>
+        <a href="">On Sale</a>
+        <a href="">New Arrivals</a>
+        <a href="">Brands</a>
+        <a><i class="fa-solid fa-cart-shopping" id="cart_logo"></i></a>
+        
+        <hr> <!--DO NOT REMOVE THIS HR TAG-->
+    </header>
+    <hr>
+    
+
+    <main>
+     
+        <h1 id="Title">Your Cart</h1>
+        <div class="checkout-section">
+            <div class="cart-items" id="box">
+                
+                
+                <div class="cart-item">
+                    <hr>
+                    <div class="product_and_delete">
+                        <p class="Product">Product Name</p>
+                        <button class="Delete_Product_button"><i class="fa-solid fa-trash-can" style="color: rgb(203, 24, 24);"></i></button>
+                    </div>
+                    
+                    <p class="subtext">Size: L</p>
+                    <p class="subtext">Color: white</p>
+                <div class="Price_and_Quantity">
+                        <div>
+                            <span class="product_price">0.00$</span>
+                        </div>
+                            <div class="Quantity">
+                                <button class="Minus_button">-</button>
+                                <span class="quantity_num">1</span>
+                                <button class="Plus_button">+</button>
+                        </div>
+                </div>
+                    
+                    <!-- end of items-->
+                </div>
+            </div>
+            
+            <div class="order-summary" id="box">
+                <h1>Order Summary</h1>
+                <p class="subtext">Subtotal: <span id="Subtotal_order">0.00$</span></p>
+                <p class="subtext">Discount: <span id="discount_order" style="color: rgb(198, 35, 35);">0.00$</span></p>
+                <p class="subtext">Delivery fee: <span id="Delivery_fee_order">0.00$</span></p>
+                <p class="subtext">Service fee: <span id="Service_fee_order">0.00$</span></p>
+                <hr>
+                <h3>Total: <span id="Total_order">0.00$</span></h3>
+                
+               <div class="bottom"> 
+                <div class="Discount">
+                    <div class="discount_code_with_icon">
+                        <label for="discount_code" class="icon"><i class="fa-solid fa-tag"></i></label>
+                        <input type="text" maxlength="20" placeholder="Add a promo code..." id="discountbar">
+                    </div>
+                    <button type="submit" id="Apply">Apply</button>
+            </div>
+                <div class="Submit_order">
+                    <button id="sub">Submit Order</button>
+                    
+                    
+                </div>
+            <div>
+            </div>
+        </div>
+    
+    </main>
+
+
+
+    <footer>
+        <hr>
+        <h1><a href="" id="logo_footer"><img src="white logo.svg" width="240" alt=""></a></h1>
+        <p class="subtext" id="bottomtext">we have clothes that fit your style and <br>
+            which you're proud to wear. <br> from
+            women to men
+        </p>
+    
+    </footer>
+</body>
+<script src="cart.js"></script>
+</html>
